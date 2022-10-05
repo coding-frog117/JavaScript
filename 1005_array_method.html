@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //map(각요소에 접근): 새로운 배열 반환함
+        const myarr=[{
+            data:1},{data:2},{data:3},{data:4}];
+        myarr.map(i=>i.data);
+
+        //forEach(긱요소 순회): 새로운 배열로 반환하지 않고 순회만 함
+        const myarr2=[{
+            'name':'lisa','age':16,'phone':8677},
+         {'name':'ben','age':35,'phone':0900},
+         {'name':'yeeun','age':23,'phone':9888}
+    ];
+        myarr2.forEach(i=>console.log(i.name));
+
+
+        //sort(정렬): 숫자 정렬시 문자열로 인식해서 유니코드로 변환하여 정렬한다. 이것을 막기 위해서 약간의 작업 필요함, 원본 변경함
+        const myarr3=[110,28,34,4];
+        myarr3.sort((a,b)=>a-b); //오름차순 정렬
+        console.log(myarr3);
+        myarr3.sort((a,b)=>b-a); //내림차순 정렬
+        console.log(myarr3);
+
+        myarr4=[{'name':'yeeun','age':25,'data':1},{'name':'haeun','age':24,'data':2},{'name':'yeongju','age':51,'data':3}];
+        myarr4.sort((a,b)=>a.age-b.age); //이렇게 객체 key를 짚어서 정렬하는 것도 가능
+        console.log(myarr4);
+        
+    </script>
+</body>
+</html>
