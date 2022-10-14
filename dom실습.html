@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>hello</div>
+
+    <p></p>
+    <input type="text">
+    <button>click me!</button>
+
+
+    <script>
+        const mybtn=document.querySelector("button");
+        const myinput=document.querySelector("input");
+        const myp=document.querySelector("p");
+        
+        //버튼을 누르면 p태그에 글자 입력되도록 하는것
+        // mybtn.addEventListener("click",function(){
+        //     myp.innerHTML=myinput.value;
+        // });
+
+        //입력과 동시에 p태그에 입력되도록 하는것
+        myinput.addEventListener("input",function(){
+            myp.innerHTML=myinput.value;
+        })
+
+        const div=document.querySelector("div");
+        mybtn.addEventListener("click",function(){
+            div.insertAdjacentHTML('beforebegin','<strong>helklklkklo</strong>');
+            // afterbegin 과 beforeend 는 요소 내에 들어간다
+            div.insertAdjacentHTML('afterbegin','<strong>helklklkklo</strong>');
+            div.insertAdjacentHTML('beforeend','<strong>helklklkklo</strong>');
+            div.insertAdjacentHTML('afterend','<strong>helklklkklo</strong>');
+        })
+
+    </script>
+</body>
+</html>

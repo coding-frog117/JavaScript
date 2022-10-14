@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+    <div>Hello world</div>
+    <p>yeeun</p>
+    <ul>
+        <li>apple</li>
+        <li class="banana">banana</li>
+        <li>orange</li>
+    </ul>
+
+    <button>button입니다</button>
+
+    <script>
+        const lists=document.querySelector("li");
+        //document가 아닌 특정 요소노드를 기준으로 삼을 경우 querySelector를 사용해야 함
+        console.log(lists.querySelector(".banana"));
+        lists.addEventListener('click',function(){
+            alert("hello world");
+        })
+
+        lists.classList.add("red");
+        lists.classList.toggle("red");
+
+        console.log(lists.classList.contains("red"));
+
+        const btn=document.querySelector("button");
+        const myp=document.querySelector("p");
+
+        const mydiv=document.createElement("div");
+        const newtxt=document.createTextNode("안녕 나는 새로생긴 텍스트야");
+
+        btn.addEventListener("click",function(){
+            myp.appendChild(mydiv);
+            mydiv.appendChild(newtxt);
+
+        })
+
+        myp.innerHTML="나는 떡볶이를 좋아해";
+        myp.innerHTML="<strong>와플입니다</strong>"
+        // myp.textContent="<strong>아이스크림입니다</strong>"
+
+    </script>
+</body>
+</html>
