@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navigator</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" class="myInput">
+        <button type="button" class="myBtn">복사하기</button>
+    </form>
+
+    <div>
+        <div class="myDiv">코구리의 코딩공부</div>
+    </div>
+
+    <script>
+        myInput=document.querySelector(".myInput");
+        myBtn=document.querySelector(".myBtn");
+
+        myBtn.addEventListener("click",function(){
+            //navigater.clipboard.writeText(복사할 텍스트)
+            navigator.clipboard.writeText(myInput.value)
+            .then(()=>{
+                alert("클립보드에 복사됨");
+            })
+            .catch(()=>{
+                alert("복사하지 못했습니다");
+            })  
+            }
+        )
+
+        myDiv=document.querySelector(".myDiv");
+        myDiv.addEventListener("click",function(){
+            navigator.clipboard.writeText(myDiv.textContent)
+            .then(()=>{
+                alert("복사 완료");
+            })
+            .catch(()=>{
+                alert("복사 못함");
+            })
+        })
+        
+    </script>
+    
+</body>
+</html>
