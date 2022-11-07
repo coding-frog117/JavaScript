@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Circle(radius){
+            this.radius=radius;
+            console.log(this);
+        }
+
+         //인스턴스 생성 전에는 this가 window 객체 가리킴. 인스턴스 생성 후 this가 바인딩 되어 circle1 인스턴스를 가리킴.(런타임 전에 실행됨)
+        const circle1= new Circle(4);
+    </script>
+</body>
+</html>
