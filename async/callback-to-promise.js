@@ -2,22 +2,21 @@
 //콜백지옥
 class UserStorage{
     loginUser(id,password){
-        return new Promise(resolve, reject)=>{
-        
-        setTimeout(()=>{
-            if(
-                (id==='ellie'&&password==='dream')||
-                (id==='coder'&&password==='academy')
-            ){
-                resolve(id);
-            } else{
-                reject(new Error('not found'));
-            }
-        },2000);
-    };
+        return new Promise((resolve, reject)=>{    
+            setTimeout(()=>{
+                if(
+                    (id==='ellie'&&password==='dream')||
+                    (id==='coder'&&password==='academy')
+                ){
+                    resolve(id);
+                } else{
+                    reject(new Error('not found'));
+                }
+            },2000);
+        });
     }
     getRoles(user){
-        return new Promise(resolve,reject){
+        return new Promise((resolve,reject)=>{
         setTimeout((resolve,reject)=>{
             if (user==='ellie'){
                 resolve({name:'ellie',role:'admin'});
@@ -36,5 +35,5 @@ const password=prompt("enter your password");
 userStorage
 .loginUser(id,password)
 .then(userStorage.getRoles)
-.then(user=>alert(`hello ${userWithRole.name}, you have a ${userWithRole.role} role`));
-.catch(console.log); 
+.then(user=>alert(`hello ${userWithRole.name}, you have a ${userWithRole.role} role`))
+.catch(console.log);
