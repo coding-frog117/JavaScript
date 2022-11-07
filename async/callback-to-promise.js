@@ -1,10 +1,14 @@
 'use strict'
+
+const { any } = require("async");
+
 //콜백지옥
 class UserStorage{
     loginUser(id,password){
         return new Promise((resolve, reject)=>{
         
         setTimeout(()=>{
+            
             if(
                 (id==='ellie'&&password==='dream')||
                 (id==='coder'&&password==='academy')
