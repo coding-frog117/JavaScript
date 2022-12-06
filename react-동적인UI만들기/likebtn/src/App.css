@@ -1,0 +1,10 @@
+.cont{
+  margin : 50px auto;
+  width:500px;
+  border: 1px solid gray;
+}
+.box{
+  width:400px;
+  height:300px;
+  background-color: pink;
+}
